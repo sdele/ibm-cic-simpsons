@@ -1,0 +1,6 @@
+
+<!-- Attention de bien ajouter le *ngIf="simpson" qui permettra de ne pas avoir d'erreur le temps que la donnée simpson soit chargée -->
+<div *ngIf="simpson" class="actor">
+  <p *ngIf="!isHidden">{{simpson.quote}}</p>
+  <img [src]="simpson.image" />
+</div>

@@ -1,0 +1,26 @@
+<p>Veuillez sélectionner un personnage orienté vers la <span [ngStyle]="{'color': 'cornflowerblue'}">gauche</span>
+  et un autre orienté vers la <span [ngStyle]="{'color': 'forestgreen'}">droite</span> pour commencer !</p>
+<p> Left : {{leftCharacter}} , Right : {{rightCharacter}}</p>
+
+<div class="card-container">
+  <ng-container *ngFor="let simpson of simpsons; let i = index">
+      <app-simpson-card
+        (click)="selectSimpson(i, simpson.characterDirection)"
+        [simpson]="simpson"
+        [isSelected]="i === leftCharacter || i === rightCharacter">
+      </app-simpson-card>
+  </ng-container>
+</div>
+<br ><br >
+
+
+<div class="actions">
+  <button (click)="getSimpsonsData()">Actualiser</button>
+  <button
+    [disabled]="rightCharacter === null || leftCharacter === null"
+    (click)="goToScene()"
+  >
+    En scène !
+  </button>
+</div>
+

@@ -1,0 +1,13 @@
+
+<div appSelectable="pink"
+     class="card"
+     [ngClass]="{'green-border': simpson.characterDirection === 'Left',
+                'blue-border': simpson.characterDirection === 'Right',
+                'selected-border': isSelected}"
+>
+    <img class="card-img" [src]="simpson.image" />
+    <div class="card-name">{{simpson.character}}</div>
+</div>
+
+
+
